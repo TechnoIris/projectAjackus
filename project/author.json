@@ -1,0 +1,13 @@
+[
+    {
+        "model": "api.Author",
+        "pk": 1,
+        "fields": {
+          "email": "author@gmail.56",
+	  "password":"9999999999",
+	  "fullName":"example",
+	  "phone":"9999999999",
+	  "pincode":"560000"
+        }
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "model": "api.Admin",
+        "pk": 1,
+        "fields": {
+          "username": "author@gmail.56",
+	  "password":"9999999999"
+        }
+    }
+]
