@@ -28,10 +28,17 @@ class Author(models.Model):
     country = models.CharField(max_length=254, blank=True)
     pincode = models.CharField(max_length=6, validators=[RegexValidator(r'^\d{1,6}$')])
 
+    def __str__(self):
+        return self.fullName
+
 class Contitem(models.Model):
     title = models.CharField(max_length=30, blank=False)
     body = models.TextField(max_length=300, blank=False)
     summary = models.TextField(max_length=60, blank=False)
+    pdf = models.FileField(blank=False, upload_to='pdf/')
+
+    def __str__(self):
+        return f"{self.title}"
 
 class Admin(models.Model):
     username = models.CharField(primary_key=True, max_length=254, blank=False, unique=True)
