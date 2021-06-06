@@ -4,6 +4,7 @@ from django.core.validators import validate_email
 from django.core.validators import RegexValidator
 
 import re
+from django.urls import reverse
 
 # Create your models here.
 
@@ -30,6 +31,10 @@ class Author(models.Model):
 
     def __str__(self):
         return self.fullName
+
+    #on submit click on the register, it redirects to url below
+    def registerAuthor(self):
+        return reverse('api:index')
 
 class Contitem(models.Model):
     title = models.CharField(max_length=30, blank=False)

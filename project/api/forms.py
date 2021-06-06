@@ -6,7 +6,8 @@ class UserRegister(forms.ModelForm):
         model = Author
         fields = ('email', 'password', 'fullName', 'phone', 'city', 'state', 'country', 'pincode')
 
-class UploadItem(forms.ModelForm):
+class UploadBook(forms.ModelForm):
     class Meta:
         model = Contitem
         fields = ('title', 'body', 'summary', 'pdf')
+
