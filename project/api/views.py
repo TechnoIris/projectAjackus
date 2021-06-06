@@ -60,3 +60,15 @@ class CreateBook(CreateView):
 class DeleteBook(DeleteView):
     model = Contitem
     success_url = reverse_lazy('api:book')
+
+class SearchBook(generic.ListView):
+    q = Q()
+    model = Contitem
+    template_name = 'searchBook'
+    if title:
+        q |= Q(title__contains==search_text):
+            result = document.objects.filter(q)
+    elif body:
+        q |= Q(body__contains==search_text):
+            result = document.objects.filter(q)
+    return result

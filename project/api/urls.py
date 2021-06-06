@@ -22,5 +22,8 @@ urlpatterns = [
     url(r'^$', views.CreateBook.as_view(), name='AddBook'),
 
     #del book
-    url(r'^$', views.DeleteBook.as_view(), name='DelBook')
+    url(r'^$', views.DeleteBook.as_view(), name='DelBook'),
+
+    #searchBook
+    url(r'^$', views.SearchBook.as_view(), name='SearchBook')
 ]
