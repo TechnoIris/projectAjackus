@@ -57,11 +57,12 @@ class CreateBook(CreateView):
     model = Contitem
     fields = ['title', 'body', 'summary', 'pdf']
 
-class DeleteBook(DeleteView):
+class DeleteBook(DeleteView, author):
     model = Contitem
+    book = Contitem.objects.filter(fullname=author)
     success_url = reverse_lazy('api:book')
 
-class SearchBook(generic.ListView):
+class SearchBook(generic.ListView, form):
     q = Q()
     model = Contitem
     template_name = 'searchBook'
